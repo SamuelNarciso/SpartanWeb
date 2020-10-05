@@ -1,0 +1,41 @@
+// Colores
+$AzulRey: #4285f4;
+$Rojo: #db4437;
+$Amarillo: #f4b400;
+$Verde: #0f9d58;
+$AzulClaro: #b2d6ef;
+$RosaClaro: #f9d2de;
+$BlancoClaro: #fefefe;
+$BlancoOpaco: #f1f1f1;
+$GrisClaro: #343438;
+$GrisOscuro: #1c2022;
+
+// Estilos Generales
+@import 'inputsOutputs';
+
+// Estilos propios de la pagina principal
+@import 'pagina_principal/header';
+@import 'pagina_principal/main';
+
+* {
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+	margin: 0%;
+	padding: 0%;
+	word-wrap: break-word;
+}
+body,
+html {
+	width: 100%;
+	height: 100vh;
+}
+
+body {
+	background: $BlancoClaro;
+	.content {
+		width: 100%;
+		height: 100%;
+        margin: 1em auto;
+
+    }
+}

@@ -1,11 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="assets/css/styles.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+		<title>Spartan WEB</title>
+	</head>
+	<body>
+		<div class="content">
+			<header>
+				<nav class="cabecera_busqueda">
+					<span class="input_icono">
+						<input
+							type="text"
+							id="buscar_usuario"
+							placeholder="Nombre del usuario o Numero de telefono "
+						/>
+						<i class="material-icons"> search </i>
+					</span>
+
+					<div class="button_busqueda">
+						<input
+							type="button"
+							value="Buscar Usuario"
+							class="boton btn-azul"
+						/>
+					</div>
+				</nav>
+				<nav class="cabecera_botones">
+					<ul>
+						<li>
+							<input
+								type="button"
+								class="unavailable boton btn-azul"
+								value="Historial de servicios"
+								disabled
+							/>
+						</li>
+						<li>
+							<input
+								type="button"
+								class="boton btn-azul"
+								value="Añadir nuevo usuario"
+							/>
+						</li>
+						<li>
+							<input
+								type="button"
+								class="unavailable boton btn-azul"
+								value="Nuevo servicio"
+								disabled
+							/>
+						</li>
+					</ul>
+				</nav>
+			</header>
+			<main>
+				<div class="titulos_cabecera">
+					<section class="encabezado"><p class="texto_encabezado"> Nombre del usuario </p></section>
+					<section class="encabezado"><p class="texto_encabezado"> Numero de telefono </p></section>
+					<section class="encabezado"><p class="texto_encabezado"> Ubicacion (Google Maps) </p></section>
+					<section class="encabezado"><p class="texto_encabezado"> Direccion </p></section>
+					<section class="encabezado"><p class="texto_encabezado"> Entre calle #1 </p></section>
+					<section class="encabezado"><p class="texto_encabezado"> Entre calle #2 </p></section>
+					<section class="encabezado"><p class="texto_encabezado"> Referencias </p></section>
+                </div>
+                <div class="contenedor_usuarios">
+                    
+                </div>
+			</main>
+		</div>
+	</body>
 </html>
