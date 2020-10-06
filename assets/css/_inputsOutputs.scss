@@ -1,34 +1,53 @@
-.boton{
-    width: 100%;
-    height: 100%;
-    font-size: 14px;
+.boton {
+	width: 100%;
+	height: 100%;
+	font-size: 14px;
+	font-weight: 500;
+	border-radius: 2px;
+	border: none;
+	&:hover {
+		cursor: pointer;
+		text-decoration-line: underline;
+	}
 }
-.btn-azul{
-    color: $BlancoClaro;
-    background: $AzulRey;
-    border: none;
-    font-weight: 500;
-    border-radius:  2px;
-    
-    &:hover{
-        
-        cursor: pointer;
-        text-decoration-line: underline;
-    }
+.btn-azul {
+	color: $BlancoClaro;
+	background: $AzulRey;
+}
+.btn-verde {
+	color: $BlancoClaro;
+	background: $Verde;
+}
+.btn-rojo {
+	color: $BlancoClaro;
+	background: $Rojo;
+}
+.btn-blanco {
+	color: $GrisOscuro;
+	background: $BlancoClaro;
+	border: 1px solid $GrisClaro;
 }
 
-
-.unavailable{
-    opacity: 50%;
-    &:hover{
-        cursor: auto;
-        text-decoration-line: none;  
-    }
+.unavailable {
+	opacity: 50%;
+	&:hover {
+		cursor: auto;
+		text-decoration-line: none;
+	}
 }
 
 .casila_azul {
-    background: $AzulClaro;
+	background: $AzulClaro;
 }
 .casila_rosa {
-    background: $RosaClaro;
+	background: $RosaClaro;
+}
+.campo_completo {
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+	border: 1px solid $GrisOscuro;
+	font-size: 18px;
+	color: $GrisClaro;
+	padding-left: 2.2em;
 }

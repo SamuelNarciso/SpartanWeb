@@ -16,91 +16,99 @@
 	</head>
 	<body>
 		<div class="RegistroUsuario">
-			<div class="icono_campo">
-				<i class="material-icons"></i>
-				<input
-					type="text"
-					name=""
-					id="user_name"
-					placeholder="Nombre completo"
-				/>
-			</div>
-
-			<div class="icono_campo">
-				<i class="material-icons"></i>
-				<input
-					type="text"
-					name=""
-					id="user_tell"
-					placeholder="numero telefonico"
-				/>
-			</div>
-
-			<div class="direcciones">
-				<div class="icono_campo medio_campo">
-					<i class="material-icons"></i>
+			<i class="material-icons cerrar" id="cerrar_registro">close</i>
+			<div class="camposRegistro">
+				<div class="icono_campo">
+					<i class="material-icons"> face</i>
 					<input
+						class="campo_completo campo"
+						type="text"
+						name=""
+						id="user_name"
+						placeholder="Nombre completo"
+					/>
+				</div>
+
+				<div class="icono_campo">
+					<i class="material-icons">call</i>
+					<input
+						class="campo_completo campo"
+						type="text"
+						name=""
+						id="user_cellphone"
+						placeholder="Numero telefonico"
+					/>
+				</div>
+				<div class="icono_campo icono_campo_medio">
+					<i class="material-icons">home</i>
+					<input
+						class="campo_completo campo"
 						type="text"
 						name=""
 						id="user_direccion"
 						placeholder="Direccion"
 					/>
 				</div>
-
-				<div class="icono_campo medio_campo">
-					<i class="material-icons"></i>
+				<div class="icono_campo icono_campo_medio">
+					<i class="material-icons">location_on</i>
 					<input
+						class="campo_completo campo"
 						type="text"
 						name=""
 						id="user_ubicacion"
-						placeholder="Ubicacion (Google Maps)"
+						placeholder="Ubicacion"
+					/>
+				</div>
+				<div class="icono_campo icono_campo_medio">
+					<input
+						class="campo_completo campo"
+						type="text"
+						name=""
+						id="user_EntreCalle1"
+						placeholder="Entre calle #1"
+					/>
+				</div>
+				<div class="icono_campo icono_campo_medio">
+					<i class="material-icons">location_on</i>
+					<input
+						class="campo_completo campo"
+						type="text"
+						name=""
+						id="user_EntreCalle2"
+						placeholder="Entre calle #1"
 					/>
 				</div>
 
-				<div class="campo_solo medio_campo">
-					<input
-						type="text"
-						name=""
-						id="entreCalle1"
-						placeholder="Entre Calle #1"
-					/>
+				<div class="icono_campo area_campo">
+					<i class="material-icons"> face</i>
+					<textarea
+						class="campo_completo campo"
+						id=""
+						placeholder="Informacion y comentarios sobre el usuario"
+					
+					></textarea>
+					
 				</div>
-				<div class="campo_solo medio_campo">
-					<input
-						type="text"
-						name=""
-						id="entreCalle2"
-						placeholder="Entre Calle #2"
-					/>
-				</div>
-				<div class="campo_solo">
-					<input
-						type="text"
-						name=""
-						id="user_referencias"
-						placeholder="Referencias o informacion extra sobre la direccion"
-					/>
-				</div>
-			</div>
-			<div class="icono_campo">
-				<i class="material-icons"></i>
-				<input
-					type="text"
-					name=""
-					id="user_extra_informacion"
-					placeholder="informacion y comentarios extra sobre el usuario"
-				/>
-			</div>
 
-			<div class="icono_campo">
-				<i class="material-icons"></i>
-				<form >
-					<label >Femenino</label>
-					<input type="radio" name="sexo" id="femenino" >
-					<label >Masculino</label>
-					<input type="radio" name="sexo" id="masculino" >
+			
 
-				</form>
+				<div class="campo_sexo">
+					<i class="material-icons">face</i>
+					<form>
+						<label for="femenino" >Femenino</label>
+						<input type="radio" name="sexo" id="femenino" />
+						<label for="masculino" >Masculino</label>
+						<input type="radio" name="sexo" id="masculino" />
+					</form>
+				</div>
+				
+				<div class="campo_botones">
+					<input type="button"  id="nuevo_usuario_Eliminar" value="Eliminar" class="boton btn-rojo">
+					<input type="button"  id="nuevo_usuario_Copiar" value="Copiar" class="boton btn-verde">
+					<input type="button"  id="nuevo_usuario_Editar" value="Editar" class="boton btn-blanco">
+					<input type="button"  id="nuevo_usuario_Guardar" value="Guardar" class="boton btn-azul">
+
+				</div>
 			</div>
 		</div>
 
@@ -175,6 +183,7 @@
 						<td class="sexo campo_informacion casila_azul">
 							<i class="material-icons"> face </i>
 						</td>
+
 						<td class="nombre campo_informacion">
 							<p>Samuel isai narciso Galvan</p>
 						</td>
@@ -250,7 +259,7 @@
 						</td>
 						<td class="campo_informacion campo_iconos">
 							<i class="material-icons"> content_copy </i>
-							<i class="material-icons"> add_shopping_cart </i>
+							<i class="material-icons">add_shopping_cart </i>
 							<i class="material-icons"> more_vert </i>
 						</td>
 					</tr>
