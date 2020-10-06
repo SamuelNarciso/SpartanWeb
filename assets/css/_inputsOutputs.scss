@@ -8,6 +8,7 @@
 	&:hover {
 		cursor: pointer;
 		text-decoration-line: underline;
+		// filter: brightness(1.05);
 	}
 }
 .btn-azul {
@@ -30,6 +31,7 @@
 
 .unavailable {
 	opacity: 50%;
+	filter: brightness(.5);
 	&:hover {
 		cursor: auto;
 		text-decoration-line: none;

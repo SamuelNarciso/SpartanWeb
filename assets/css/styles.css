@@ -36,6 +36,8 @@
 
 .unavailable {
   opacity: 50%;
+  -webkit-filter: brightness(0.5);
+          filter: brightness(0.5);
 }
 
 .unavailable:hover {
@@ -272,11 +274,9 @@ main tbody .contenedor_informacion_usuario .sexo i {
 }
 
 .RegistroUsuario {
-  -webkit-transition: all ease .8s;
-  transition: all ease .8s;
+  -webkit-transition: all ease 0.8s;
+  transition: all ease 0.8s;
   position: absolute;
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
   z-index: 10;
   width: 100%;
   height: 100vh;
@@ -343,13 +343,14 @@ main tbody .contenedor_informacion_usuario .sexo i {
 }
 
 .RegistroUsuario .camposRegistro .icono_campo textarea {
+  padding-left: 2.45em;
   font-size: 16px;
-  height: 150%;
+  height: 125%;
   width: 100%;
   max-width: 100%;
   min-width: 100%;
-  max-height: 150%;
-  min-height: 150%;
+  max-height: 125%;
+  min-height: 125%;
 }
 
 .RegistroUsuario .camposRegistro .area_campo {
@@ -372,11 +373,16 @@ main tbody .contenedor_informacion_usuario .sexo i {
   display: flex;
 }
 
+.RegistroUsuario .camposRegistro .campo_sexo i {
+  margin-right: 6px;
+}
+
 .RegistroUsuario .camposRegistro .campo_sexo input {
-  margin: 0 05px;
+  margin-right: 20px;
 }
 
 .RegistroUsuario .camposRegistro .campo_botones {
+  height: 10%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -395,6 +401,16 @@ main tbody .contenedor_informacion_usuario .sexo i {
 .expand {
   -webkit-transform: translateY(0%);
           transform: translateY(0%);
+}
+
+.swal-button {
+  background-color: #db4437;
+  color: #fefefe;
+}
+
+.swal-button:hover {
+  background-color: #db4437;
+  color: #fefefe;
 }
 
 * {

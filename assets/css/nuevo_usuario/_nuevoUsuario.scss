@@ -1,8 +1,8 @@
 .RegistroUsuario {
-    transition: all ease .8s;
-    position: absolute;
-    transform: translateY(-100%);
-    z-index: 10;
+	transition: all ease 0.8s;
+	position: absolute;
+	// transform: translateY(-100%);
+	z-index: 10;
 	width: 100%;
 	height: 100vh;
 	display: flex;
@@ -14,13 +14,13 @@
 		position: absolute;
 		top: 15px;
 		background: $GrisClaro;
-        font-size: 34px;
-        border-radius: 50%;
-        color: $BlancoClaro;
-        &:hover {
-            cursor: pointer;
-            background: $Rojo;
-        }
+		font-size: 34px;
+		border-radius: 50%;
+		color: $BlancoClaro;
+		&:hover {
+			cursor: pointer;
+			background: $Rojo;
+		}
 	}
 	.camposRegistro {
 		width: 70%;
@@ -47,13 +47,14 @@
 				font-size: 30px;
 			}
 			textarea {
+				padding-left: 2.45em;
 				font-size: 16px;
-				height: 150%;
+				height: 125%;
 				width: 100%;
 				max-width: 100%;
 				min-width: 100%;
-				max-height: 150%;
-				min-height: 150%;
+				max-height: 125%;
+				min-height: 125%;
 			}
 		}
 
@@ -68,12 +69,17 @@
 		.campo_sexo {
 			width: 100%;
 			display: flex;
+			i {
+				margin-right: 6px;
+			}
 			input {
-				margin: 0 05px;
+				margin-right: 20px;
 			}
 		}
 
 		.campo_botones {
+			height: 10%;
+			// border: 3px solid #f31a16; //TODO: Quitar este borde, es unicamente para marcar un area
 			display: flex;
 			justify-content: space-around;
 			align-items: center;
@@ -85,6 +91,20 @@
 	}
 }
 
-.expand{
+.expand {
 	transform: translateY(0%);
+}
+
+.swal-button {
+	// padding: 7px 19px;
+	// border-radius: 2px;
+	background-color: $Rojo;
+	color: $BlancoClaro;
+	// font-size: 12px;
+	// border: 1px solid #3e549a;
+	// text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+	&:hover{
+		background-color: $Rojo;
+		color: $BlancoClaro;
+	}
 }

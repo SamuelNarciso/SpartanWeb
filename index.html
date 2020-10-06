@@ -12,6 +12,11 @@
 			href="https://fonts.googleapis.com/icon?family=Material+Icons"
 			rel="stylesheet"
 		/>
+		<!-- Css de Alertyfy -->
+		<link
+			rel="stylesheet"
+			href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"
+		/>
 		<title>Spartan WEB</title>
 	</head>
 	<body>
@@ -69,14 +74,22 @@
 					/>
 				</div>
 				<div class="icono_campo icono_campo_medio">
-					<i class="material-icons">location_on</i>
 					<input
 						class="campo_completo campo"
 						type="text"
 						name=""
 						id="user_EntreCalle2"
-						placeholder="Entre calle #1"
+						placeholder="Entre calle #2"
 					/>
+				</div>
+
+				<div class="icono_campo area_campo">
+					<i class="material-icons"> edit_road</i>
+					<textarea
+						class="campo_completo campo"
+						id=""
+						placeholder="Referencias o comentarios extra sobre la direccion (Color de casa, Tamano de la casa, Quien recibe los productos en la direccion comunmente)"
+					></textarea>
 				</div>
 
 				<div class="icono_campo area_campo">
@@ -85,29 +98,33 @@
 						class="campo_completo campo"
 						id=""
 						placeholder="Informacion y comentarios sobre el usuario"
-					
 					></textarea>
-					
 				</div>
-
-			
 
 				<div class="campo_sexo">
 					<i class="material-icons">face</i>
 					<form>
-						<label for="femenino" >Femenino</label>
+						<label for="femenino">Femenino</label>
 						<input type="radio" name="sexo" id="femenino" />
-						<label for="masculino" >Masculino</label>
+						<label for="masculino">Masculino</label>
 						<input type="radio" name="sexo" id="masculino" />
 					</form>
 				</div>
-				
-				<div class="campo_botones">
-					<input type="button"  id="nuevo_usuario_Eliminar" value="Eliminar" class="boton btn-rojo">
-					<input type="button"  id="nuevo_usuario_Copiar" value="Copiar" class="boton btn-verde">
-					<input type="button"  id="nuevo_usuario_Editar" value="Editar" class="boton btn-blanco">
-					<input type="button"  id="nuevo_usuario_Guardar" value="Guardar" class="boton btn-azul">
 
+				<div class="campo_botones">
+					<input
+						type="button"
+						id="nuevo_usuario_Eliminar"
+						value="Cancelar"
+						class="boton btn-rojo"
+					/>
+
+					<input
+						type="button"
+						id="nuevo_usuario_Guardar"
+						value="Guardar"
+						class="boton btn-azul"
+					/>
 				</div>
 			</div>
 		</div>
@@ -267,6 +284,11 @@
 			</main>
 		</div>
 
+		<!--Alertas Alertify-->
+		<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+		<!-- Alertas CDN SWEET ALERT -->
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 		<!-- The core Firebase JS SDK is always required and must be listed first -->
 		<script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-firestore.js"></script>
@@ -292,6 +314,6 @@
 			firebase.initializeApp(firebaseConfig);
 			firebase.analytics();
 		</script>
-		<script src="assets/js/app.js"></script>
+		<script type="module" src="assets/js/app.js"></script>
 	</body>
 </html>

@@ -1,29 +1,81 @@
-const db = firebase.firestore();
-const add_user_button = document.querySelector('#add_user');
-const RegistroUsuario_ventana = document.querySelector('.RegistroUsuario');
+import {guardarDatos} from './accionesFirebase.js';
 
+const add_user_button = document.querySelector('#add_user');
 const cerrar_registro_button = document.querySelector('#cerrar_registro');
 
-const nuevo_usuario_Eliminar = document.querySelector(
-	'#nuevo_usuario_Eliminar'
+const [boton_eliminar, boton_guardar] = document.querySelectorAll(
+	'.campo_botones .boton'
 );
-const nuevo_usuario_Copiar = document.querySelector('#nuevo_usuario_Copiar');
-const nuevo_usuario_Editar = document.querySelector('#nuevo_usuario_Editar');
-const nuevo_usuario_Guardar = document.querySelector('#nuevo_usuario_Guardar');
+
+const expandir_retraer_usuariosNuevos = () => {
+	const RegistroUsuario = document.querySelector('.RegistroUsuario');
+	RegistroUsuario.classList.toggle('expand');
+};
+
+const verificarCampo_guardarDatos = async () => {
+	const sexo = document.querySelector('#femenino').checked
+		? 'mujer'
+		: document.querySelector('#masculino').checked
+		? 'hombre'
+		: null;
+
+	const [
+		nombre,
+		telefono,
+		direccion,
+		ubicacion,
+		entreCalle1,
+		entreCalle2,
+		referenciasDeCallesExtra,
+		comentariosExtra,
+	] = document.querySelectorAll('.camposRegistro .campo');
+
+	if (!nombre.value && !telefono.value && !sexo) {
+		alertify.error(
+			'No se puede guardar este usuario, necesita los campos nombre, telefono y sexo'
+		);
+	} else {
+		if (!nombre.value) {
+			alertify.error('falta colocar el nombre ');
+		}
+		if (!telefono.value) {
+			alertify.error('falta colocar el telefono');
+		}
+		if (!sexo) {
+			alertify.error('falta colocar el sexo');
+		}
+	}
+	if (nombre.value && telefono.value && sexo) {
+		await guardarDatos(
+			nombre.value,
+			telefono.value,
+			direccion.value,
+			ubicacion.value,
+			entreCalle1.value,
+			entreCalle2.value,
+			referenciasDeCallesExtra.value,
+			comentariosExtra.value,
+			sexo
+		);
+	}
+};
 
 add_user_button.addEventListener('click', () => {
-	const RegistroUsuario = document.querySelector('.RegistroUsuario');
-	RegistroUsuario.classList.toggle('expand');
+	expandir_retraer_usuariosNuevos();
 });
-
 cerrar_registro_button.addEventListener('click', () => {
-	const RegistroUsuario = document.querySelector('.RegistroUsuario');
-	RegistroUsuario.classList.toggle('expand');
+	expandir_retraer_usuariosNuevos();
 });
 
-nuevo_usuario_Guardar.addEventListener('click', () => {
-    const campos = document.querySelectorAll('.camposRegistro .campo');
-    const [nombre,telefono,direccion,ubicacion,entreCalle1,entreCalle2,comentariosExtra] = campos;
-    console.log(nombre.value);
-    
+boton_guardar.addEventListener('click', () => {
+	verificarCampo_guardarDatos();
+});
+
+boton_eliminar.addEventListener('click', () => {
+	swal({
+		title: 'Cancelar registro!',
+		text: 'Seguro que quieres cancelar el registro?',
+		icon: 'warning',
+		buttons: {cancel: 'Cancelar', confirm: true},
+	});
 });
