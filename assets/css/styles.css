@@ -28,7 +28,16 @@
           text-decoration-line: none;
 }
 
+.casila_azul {
+  background: #b2d6ef;
+}
+
+.casila_rosa {
+  background: #f9d2de;
+}
+
 header {
+  padding-top: 5px;
   width: 100%;
   height: 20%;
 }
@@ -105,23 +114,134 @@ main {
   background: #f1f1f1;
 }
 
-main .titulos_cabecera {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+main .contenedor_usuarios,
+main tbody {
   background: #f1f1f1;
-  border-bottom: 2px solid #343438;
+  border-collapse: collapse;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 8%;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  padding: 0 0px;
+  overflow: auto;
+  width: 100%;
 }
 
-main .titulos_cabecera .encabezado {
+main .contenedor_usuarios .titulos_cabecera,
+main tbody .titulos_cabecera {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 2px 40px -13px #343438;
+          box-shadow: 0 2px 40px -13px #343438;
+  width: 100%;
+  height: 10%;
+  margin-bottom: 10px;
+}
+
+main .contenedor_usuarios .titulos_cabecera .sexo,
+main tbody .titulos_cabecera .sexo {
+  width: 5%;
+}
+
+main .contenedor_usuarios .titulos_cabecera th,
+main tbody .titulos_cabecera th {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-weight: 600;
+  height: 100%;
+  width: 12%;
+  line-height: 100%;
+}
+
+main .contenedor_usuarios .titulos_cabecera th .reducido,
+main tbody .titulos_cabecera th .reducido {
+  font-weight: 500;
+}
+
+main .contenedor_usuarios .contenedor_informacion_usuario,
+main tbody .contenedor_informacion_usuario {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 12%;
+  width: 100%;
+  border-radius: 15px;
+  background: #fefefe;
+  -webkit-box-shadow: -2px 8px 28px -16px rgba(0, 0, 0, 0.75);
+          box-shadow: -2px 8px 28px -16px rgba(0, 0, 0, 0.75);
+  margin-bottom: 10px;
+}
+
+main .contenedor_usuarios .contenedor_informacion_usuario .campo_informacion,
+main tbody .contenedor_informacion_usuario .campo_informacion {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 14px;
+  font-weight: 400;
+  height: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  overflow: auto;
+  padding: 1px;
+  text-align: center;
+  width: 12%;
+}
+
+main .contenedor_usuarios .contenedor_informacion_usuario .campo_iconos,
+main tbody .contenedor_informacion_usuario .campo_iconos {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .contenedor_usuarios .contenedor_informacion_usuario .ubicacion a,
+main tbody .contenedor_informacion_usuario .ubicacion a {
+  text-decoration: none;
+  color: #4285f4;
+  font-weight: 500;
+}
+
+main .contenedor_usuarios .contenedor_informacion_usuario .ubicacion a:hover,
+main tbody .contenedor_informacion_usuario .ubicacion a:hover {
+  text-decoration: underline;
+}
+
+main .contenedor_usuarios .contenedor_informacion_usuario .sexo,
+main tbody .contenedor_informacion_usuario .sexo {
+  border-radius: 15px 0 0 15px;
+  width: 5%;
+  overflow: hidden;
+}
+
+main .contenedor_usuarios .contenedor_informacion_usuario .sexo i,
+main tbody .contenedor_informacion_usuario .sexo i {
+  font-size: 54px;
   color: #1c2022;
 }
 
@@ -147,6 +267,5 @@ body {
 body .content {
   width: 100%;
   height: 100%;
-  margin: 1em auto;
 }
 /*# sourceMappingURL=styles.css.map */

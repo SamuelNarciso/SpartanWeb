@@ -15,6 +15,95 @@
 		<title>Spartan WEB</title>
 	</head>
 	<body>
+		<div class="RegistroUsuario">
+			<div class="icono_campo">
+				<i class="material-icons"></i>
+				<input
+					type="text"
+					name=""
+					id="user_name"
+					placeholder="Nombre completo"
+				/>
+			</div>
+
+			<div class="icono_campo">
+				<i class="material-icons"></i>
+				<input
+					type="text"
+					name=""
+					id="user_tell"
+					placeholder="numero telefonico"
+				/>
+			</div>
+
+			<div class="direcciones">
+				<div class="icono_campo medio_campo">
+					<i class="material-icons"></i>
+					<input
+						type="text"
+						name=""
+						id="user_direccion"
+						placeholder="Direccion"
+					/>
+				</div>
+
+				<div class="icono_campo medio_campo">
+					<i class="material-icons"></i>
+					<input
+						type="text"
+						name=""
+						id="user_ubicacion"
+						placeholder="Ubicacion (Google Maps)"
+					/>
+				</div>
+
+				<div class="campo_solo medio_campo">
+					<input
+						type="text"
+						name=""
+						id="entreCalle1"
+						placeholder="Entre Calle #1"
+					/>
+				</div>
+				<div class="campo_solo medio_campo">
+					<input
+						type="text"
+						name=""
+						id="entreCalle2"
+						placeholder="Entre Calle #2"
+					/>
+				</div>
+				<div class="campo_solo">
+					<input
+						type="text"
+						name=""
+						id="user_referencias"
+						placeholder="Referencias o informacion extra sobre la direccion"
+					/>
+				</div>
+			</div>
+			<div class="icono_campo">
+				<i class="material-icons"></i>
+				<input
+					type="text"
+					name=""
+					id="user_extra_informacion"
+					placeholder="informacion y comentarios extra sobre el usuario"
+				/>
+			</div>
+
+			<div class="icono_campo">
+				<i class="material-icons"></i>
+				<form >
+					<label >Femenino</label>
+					<input type="radio" name="sexo" id="femenino" >
+					<label >Masculino</label>
+					<input type="radio" name="sexo" id="masculino" >
+
+				</form>
+			</div>
+		</div>
+
 		<div class="content">
 			<header>
 				<nav class="cabecera_busqueda">
@@ -47,6 +136,7 @@
 						</li>
 						<li>
 							<input
+								id="add_user"
 								type="button"
 								class="boton btn-azul"
 								value="Añadir nuevo usuario"
@@ -64,19 +154,135 @@
 				</nav>
 			</header>
 			<main>
-				<div class="titulos_cabecera">
-					<section class="encabezado"><p class="texto_encabezado"> Nombre del usuario </p></section>
-					<section class="encabezado"><p class="texto_encabezado"> Numero de telefono </p></section>
-					<section class="encabezado"><p class="texto_encabezado"> Ubicacion (Google Maps) </p></section>
-					<section class="encabezado"><p class="texto_encabezado"> Direccion </p></section>
-					<section class="encabezado"><p class="texto_encabezado"> Entre calle #1 </p></section>
-					<section class="encabezado"><p class="texto_encabezado"> Entre calle #2 </p></section>
-					<section class="encabezado"><p class="texto_encabezado"> Referencias </p></section>
-                </div>
-                <div class="contenedor_usuarios">
-                    
-                </div>
+				<table class="contenedor_usuarios">
+					<tr class="titulos_cabecera">
+						<th class="sexo">Sexo</th>
+						<th>Nombre del usuario</th>
+						<th>Numero de telefono</th>
+						<th>
+							Ubicacion
+							<br />
+							<span class="reducido"> (Google Maps)</span>
+						</th>
+						<th>Direccion</th>
+						<th>Entre calle #1</th>
+						<th>Entre calle #2</th>
+						<th>Referencias</th>
+						<th>Mas opciones</th>
+					</tr>
+
+					<tr class="contenedor_informacion_usuario">
+						<td class="sexo campo_informacion casila_azul">
+							<i class="material-icons"> face </i>
+						</td>
+						<td class="nombre campo_informacion">
+							<p>Samuel isai narciso Galvan</p>
+						</td>
+						<td class="numeroTel campo_informacion">
+							<p>7352581611</p>
+						</td>
+						<td class="ubicacion campo_informacion">
+							<a
+								href="https://goo.gl/maps/bq5gffV1RFMHzsKY6"
+								class="ubicacion_link"
+							>
+								Direccion Google Maps
+							</a>
+						</td>
+						<td class="direccion campo_informacion">
+							<p>Lorem ipsum dolor sit amet consectetur.</p>
+						</td>
+						<td class="entrecalle1 campo_informacion">
+							<p>Lorem ipsum dolor sit amet consectetur.</p>
+						</td>
+						<td class="entrecalle2 campo_informacion">
+							<p>Lorem ipsum dolor sit amet consectetur.</p>
+						</td>
+						<td class="referencias campo_informacion">
+							<p>
+								Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+								Accusamus est doloremque omnis explicabo inventore. Accusamus
+								optio esse illum laborum, recusandae iure obcaecati asperiores
+								quos eos repellendus, fugit molestiae voluptas eveniet.
+							</p>
+						</td>
+						<td class="campo_informacion campo_iconos">
+							<i class="material-icons"> content_copy </i>
+							<i class="material-icons"> add_shopping_cart </i>
+							<i class="material-icons"> more_vert </i>
+						</td>
+					</tr>
+
+					<tr class="contenedor_informacion_usuario">
+						<td class="sexo campo_informacion casila_rosa">
+							<i class="material-icons"> face </i>
+						</td>
+						<td class="nombre campo_informacion">
+							<p>Lorem ipsum dolor sit amet.</p>
+						</td>
+						<td class="numeroTel campo_informacion">
+							<p>735252369</p>
+						</td>
+						<td class="ubicacion campo_informacion">
+							<a
+								href="https://goo.gl/maps/bq5gffV1RFMHzsKY6"
+								class="ubicacion_link"
+							>
+								Direccion Google Maps
+							</a>
+						</td>
+						<td class="direccion campo_informacion">
+							<p>Lorem ipsum dolor sit amet consectetur.</p>
+						</td>
+						<td class="entrecalle1 campo_informacion">
+							<p>Lorem ipsum dolor sit amet consectetur.</p>
+						</td>
+						<td class="entrecalle2 campo_informacion">
+							<p>Lorem ipsum dolor sit amet consectetur.</p>
+						</td>
+						<td class="referencias campo_informacion">
+							<p>
+								Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+								Accusamus est doloremque omnis explicabo inventore. Accusamus
+								optio esse illum laborum, recusandae iure obcaecati asperiores
+								quos eos repellendus, fugit molestiae voluptas eveniet.
+							</p>
+						</td>
+						<td class="campo_informacion campo_iconos">
+							<i class="material-icons"> content_copy </i>
+							<i class="material-icons"> add_shopping_cart </i>
+							<i class="material-icons"> more_vert </i>
+						</td>
+					</tr>
+				</table>
 			</main>
 		</div>
+
+		<!-- The core Firebase JS SDK is always required and must be listed first -->
+		<script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-firestore.js"></script>
+
+		<!-- TODO: Add SDKs for Firebase products that you want to use
+		 https://firebase.google.com/docs/web/setup#available-libraries -->
+		<script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-analytics.js"></script>
+
+		<script>
+			// Your web app's Firebase configuration
+			// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+			var firebaseConfig = {
+				apiKey: 'AIzaSyB-IkPc55tVmE3O7nQx5KNeJEnXwP4UrK4',
+				authDomain: 'spartan-web-e711b.firebaseapp.com',
+				databaseURL: 'https://spartan-web-e711b.firebaseio.com',
+				projectId: 'spartan-web-e711b',
+				storageBucket: 'spartan-web-e711b.appspot.com',
+				messagingSenderId: '302610747872',
+				appId: '1:302610747872:web:304cc879e2242dcd76db85',
+				measurementId: 'G-CYYCG3DE80',
+			};
+			// Initialize Firebase
+			firebase.initializeApp(firebaseConfig);
+			firebase.analytics();
+		</script>
+		<script src="assets/js/app.js"></script>
 	</body>
 </html>

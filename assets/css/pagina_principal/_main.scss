@@ -2,20 +2,89 @@ main {
 	width: 100%;
 	height: 80%;
 	background: $BlancoOpaco;
-
-	.titulos_cabecera {
-		align-items: center;
+	.contenedor_usuarios,
+	tbody {
 		background: $BlancoOpaco;
-		border-bottom: 2px solid $GrisClaro;
+		border-collapse: collapse;
 		display: flex;
-		height: 8%;
-		justify-content: space-evenly;
+		flex-direction: column;
+		height: 100%;
+		padding: 0 0px;
+		overflow: auto;
+		width: 100%;
 
-		.encabezado {
-			font-weight: 600;
-			color: $GrisOscuro;
+		.titulos_cabecera {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			box-shadow: 0 2px 40px -13px $GrisClaro;
+			width: 100%;
+			height: 10%;
+			margin-bottom: 10px;
+
+			.sexo {
+				width: 5%;
+			}
+
+			th {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				font-weight: 600;
+				height: 100%;
+				width: 12%;
+				line-height: 100%;
+				.reducido {
+					font-weight: 500;
+				}
+			}
 		}
-    }
-    
-    .contenedor_usuarios{}
+
+		.contenedor_informacion_usuario {
+			display: flex;
+			flex-direction: row;
+			height: 12%;
+			width: 100%;
+			border-radius: 15px;
+			background: $BlancoClaro;
+			box-shadow: -2px 8px 28px -16px rgba(0, 0, 0, 0.75);
+			margin-bottom: 10px;
+
+			.campo_informacion {
+				display: flex;
+				font-size: 14px;
+				font-weight: 400;
+				height: 100%;
+				justify-content: space-around;
+				overflow: auto;
+				padding: 1px;
+				text-align: center;
+				width: 12%;
+			}
+
+			.campo_iconos {
+				align-items: center;
+			}
+			.ubicacion a {
+				text-decoration: none;
+				color: $AzulRey;
+				font-weight: 500;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+			.sexo {
+				border-radius: 15px 0 0 15px;
+				width: 5%;
+				overflow: hidden;
+				i {
+					font-size: 54px;
+					color: $GrisOscuro;
+				}
+			}
+		
+		}
+	}
 }
