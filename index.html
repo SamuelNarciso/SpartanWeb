@@ -20,6 +20,7 @@
 		<title>Spartan WEB</title>
 	</head>
 	<body>
+		
 		<div class="RegistroUsuario">
 			<i class="material-icons cerrar" id="cerrar_registro">close</i>
 			<div class="camposRegistro">
@@ -28,7 +29,6 @@
 					<input
 						class="campo_completo campo"
 						type="text"
-						name=""
 						id="user_name"
 						placeholder="Nombre completo"
 					/>
@@ -39,7 +39,6 @@
 					<input
 						class="campo_completo campo"
 						type="text"
-						name=""
 						id="user_cellphone"
 						placeholder="Numero telefonico"
 					/>
@@ -49,7 +48,6 @@
 					<input
 						class="campo_completo campo"
 						type="text"
-						name=""
 						id="user_direccion"
 						placeholder="Direccion"
 					/>
@@ -57,9 +55,8 @@
 				<div class="icono_campo icono_campo_medio">
 					<i class="material-icons">location_on</i>
 					<input
-						class="campo_completo campo"
+						class="campo campo_completo texto-azul"
 						type="text"
-						name=""
 						id="user_ubicacion"
 						placeholder="Ubicacion"
 					/>
@@ -68,7 +65,6 @@
 					<input
 						class="campo_completo campo"
 						type="text"
-						name=""
 						id="user_EntreCalle1"
 						placeholder="Entre calle #1"
 					/>
@@ -77,7 +73,6 @@
 					<input
 						class="campo_completo campo"
 						type="text"
-						name=""
 						id="user_EntreCalle2"
 						placeholder="Entre calle #2"
 					/>
@@ -119,6 +114,17 @@
 						class="boton btn-rojo"
 					/>
 
+					<div class="boton_link">
+						<a
+							id="google_maps"
+							class="link btn-verde"
+							href="https://www.google.com.mx/maps"
+							target="_blank"
+						>
+							Buscar Google Maps
+						</a>
+					</div>
+
 					<input
 						type="button"
 						id="nuevo_usuario_Guardar"
@@ -131,6 +137,7 @@
 
 		<div class="content">
 			<header>
+				<input type="button" value=" <span> hola </span>" />
 				<nav class="cabecera_busqueda">
 					<span class="input_icono">
 						<input
@@ -140,14 +147,6 @@
 						/>
 						<i class="material-icons"> search </i>
 					</span>
-
-					<div class="button_busqueda">
-						<input
-							type="button"
-							value="Buscar Usuario"
-							class="boton btn-azul"
-						/>
-					</div>
 				</nav>
 				<nav class="cabecera_botones">
 					<ul>
@@ -179,7 +178,7 @@
 				</nav>
 			</header>
 			<main>
-				<table class="contenedor_usuarios">
+				<table class="contenedor_titulos">
 					<tr class="titulos_cabecera">
 						<th class="sexo">Sexo</th>
 						<th>Nombre del usuario</th>
@@ -195,51 +194,10 @@
 						<th>Referencias</th>
 						<th>Mas opciones</th>
 					</tr>
-
-					<tr class="contenedor_informacion_usuario">
-						<td class="sexo campo_informacion casila_azul">
-							<i class="material-icons"> face </i>
-						</td>
-
-						<td class="nombre campo_informacion">
-							<p>Samuel isai narciso Galvan</p>
-						</td>
-						<td class="numeroTel campo_informacion">
-							<p>7352581611</p>
-						</td>
-						<td class="ubicacion campo_informacion">
-							<a
-								href="https://goo.gl/maps/bq5gffV1RFMHzsKY6"
-								class="ubicacion_link"
-							>
-								Direccion Google Maps
-							</a>
-						</td>
-						<td class="direccion campo_informacion">
-							<p>Lorem ipsum dolor sit amet consectetur.</p>
-						</td>
-						<td class="entrecalle1 campo_informacion">
-							<p>Lorem ipsum dolor sit amet consectetur.</p>
-						</td>
-						<td class="entrecalle2 campo_informacion">
-							<p>Lorem ipsum dolor sit amet consectetur.</p>
-						</td>
-						<td class="referencias campo_informacion">
-							<p>
-								Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-								Accusamus est doloremque omnis explicabo inventore. Accusamus
-								optio esse illum laborum, recusandae iure obcaecati asperiores
-								quos eos repellendus, fugit molestiae voluptas eveniet.
-							</p>
-						</td>
-						<td class="campo_informacion campo_iconos">
-							<i class="material-icons"> content_copy </i>
-							<i class="material-icons"> add_shopping_cart </i>
-							<i class="material-icons"> more_vert </i>
-						</td>
-					</tr>
-
-					<tr class="contenedor_informacion_usuario">
+				</table>
+				<table class="contenedor_usuarios">
+					<tbody></tbody>
+					<!-- <tr class="contenedor_informacion_usuario">
 						<td class="sexo campo_informacion casila_rosa">
 							<i class="material-icons"> face </i>
 						</td>
@@ -279,7 +237,7 @@
 							<i class="material-icons">add_shopping_cart </i>
 							<i class="material-icons"> more_vert </i>
 						</td>
-					</tr>
+					</tr> -->
 				</table>
 			</main>
 		</div>
@@ -287,7 +245,7 @@
 		<!--Alertas Alertify-->
 		<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 		<!-- Alertas CDN SWEET ALERT -->
-		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		<!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
 
 		<!-- The core Firebase JS SDK is always required and must be listed first -->
 		<script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-app.js"></script>

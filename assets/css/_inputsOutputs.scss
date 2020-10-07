@@ -29,19 +29,37 @@
 	border: 1px solid $GrisClaro;
 }
 
+.link {
+	text-decoration-line: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	font-size: 14px;
+	font-weight: 500;
+	border-radius: 2px;
+	border: none;
+	&:hover {
+		cursor: pointer;
+		text-decoration-line: underline;
+		// filter: brightness(1.05);
+	}
+}
 .unavailable {
 	opacity: 50%;
-	filter: brightness(.5);
+	filter: brightness(0.5);
 	&:hover {
 		cursor: auto;
 		text-decoration-line: none;
 	}
 }
 
-.casila_azul {
+
+
+.casilla_azul {
 	background: $AzulClaro;
 }
-.casila_rosa {
+.casilla_rosa {
 	background: $RosaClaro;
 }
 .campo_completo {
@@ -52,4 +70,14 @@
 	font-size: 18px;
 	color: $GrisClaro;
 	padding-left: 2.2em;
+}
+
+.texto-azul {
+	color: $AzulRey;
+	font-weight: 500;
+}
+
+.casilla_gris {
+	background: #7070704b;
+
 }
