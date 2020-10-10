@@ -7,6 +7,8 @@ main {
 		width: 100%;
 		height: 100%;
 		display: flex;
+		overflow: auto;
+		
 		flex-direction: column;
 		background: $BlancoOpaco;
 		.table_titulos {
@@ -63,11 +65,12 @@ main {
 		.table_body {
 			background: $BlancoOpaco;
 			border-collapse: collapse;
+			display: flex;
+			flex-direction: column;
+			flex-wrap: nowrap;
 			height: 86%;
 			overflow: auto;
 			width: 100%;
-			display: flex;
-			flex-direction: column;
 			.contenedor_informacion_usuario {
 				background: $BlancoClaro;
 				box-shadow: 0px 5px 15px -8px $GrisOscuro;

@@ -198,6 +198,7 @@ main .contenedor_usuarios {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  overflow: auto;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -280,9 +281,6 @@ main .contenedor_usuarios .table_titulos .mas_opciones th {
 main .contenedor_usuarios .table_body {
   background: #f1f1f1;
   border-collapse: collapse;
-  height: 86%;
-  overflow: auto;
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -290,6 +288,11 @@ main .contenedor_usuarios .table_body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 86%;
+  overflow: auto;
+  width: 100%;
 }
 
 main .contenedor_usuarios .table_body .contenedor_informacion_usuario {

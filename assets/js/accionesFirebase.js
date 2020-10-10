@@ -42,8 +42,7 @@ export const guardarDatos_usuarioNuevo = (
 
 const onGetUsers = (callback) => db.collection('usuarios').onSnapshot(callback);
 
-window.addEventListener('Click', async (e) => {
-// window.addEventListener('DOMContentLoaded', async (e) => {
+window.addEventListener('DOMContentLoaded', async (e) => {
 	onGetUsers((querySnapshot) => {
 		contenedor_usuarios.innerHTML = '';
 		querySnapshot.forEach((doc) => {
