@@ -20,7 +20,6 @@
 		<title>Spartan WEB</title>
 	</head>
 	<body>
-		
 		<div class="RegistroUsuario">
 			<i class="material-icons cerrar" id="cerrar_registro">close</i>
 			<div class="camposRegistro">
@@ -137,7 +136,6 @@
 
 		<div class="content">
 			<header>
-				<input type="button" value=" <span> hola </span>" />
 				<nav class="cabecera_busqueda">
 					<span class="input_icono">
 						<input
@@ -178,72 +176,96 @@
 				</nav>
 			</header>
 			<main>
-				<table class="contenedor_titulos">
-					<tr class="titulos_cabecera">
-						<th class="sexo">Sexo</th>
-						<th>Nombre del usuario</th>
-						<th>Numero de telefono</th>
-						<th>
-							Ubicacion
-							<br />
-							<span class="reducido"> (Google Maps)</span>
-						</th>
-						<th>Direccion</th>
-						<th>Entre calle #1</th>
-						<th>Entre calle #2</th>
-						<th>Referencias</th>
-						<th>Mas opciones</th>
-					</tr>
-				</table>
 				<table class="contenedor_usuarios">
-					<tbody></tbody>
-					<!-- <tr class="contenedor_informacion_usuario">
-						<td class="sexo campo_informacion casila_rosa">
-							<i class="material-icons"> face </i>
-						</td>
-						<td class="nombre campo_informacion">
-							<p>Lorem ipsum dolor sit amet.</p>
-						</td>
-						<td class="numeroTel campo_informacion">
-							<p>735252369</p>
-						</td>
-						<td class="ubicacion campo_informacion">
-							<a
-								href="https://goo.gl/maps/bq5gffV1RFMHzsKY6"
-								class="ubicacion_link"
-							>
-								Direccion Google Maps
-							</a>
-						</td>
-						<td class="direccion campo_informacion">
-							<p>Lorem ipsum dolor sit amet consectetur.</p>
-						</td>
-						<td class="entrecalle1 campo_informacion">
-							<p>Lorem ipsum dolor sit amet consectetur.</p>
-						</td>
-						<td class="entrecalle2 campo_informacion">
-							<p>Lorem ipsum dolor sit amet consectetur.</p>
-						</td>
-						<td class="referencias campo_informacion">
-							<p>
-								Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-								Accusamus est doloremque omnis explicabo inventore. Accusamus
-								optio esse illum laborum, recusandae iure obcaecati asperiores
-								quos eos repellendus, fugit molestiae voluptas eveniet.
-							</p>
-						</td>
-						<td class="campo_informacion campo_iconos">
-							<i class="material-icons"> content_copy </i>
-							<i class="material-icons">add_shopping_cart </i>
-							<i class="material-icons"> more_vert </i>
-						</td>
-					</tr> -->
+					<thead class="table_titulos">
+						<tr class="titulos_cabecera">
+							<th class="sexo">Sexo</th>
+							<th>Nombre del usuario</th>
+							<th>Numero de telefono</th>
+							<th>
+								Ubicacion
+								<br />
+								<span class="reducido"> (Google Maps)</span>
+							</th>
+							<th>Direccion</th>
+							<th>Entre calle #1</th>
+							<th>Entre calle #2</th>
+							<th>Referencias</th>
+							<th>Mas opciones</th>
+						</tr>
+						<tr class="mas_opciones" data-id="">
+							<th data-id="" class="oculto hover_link">Datos completos</th>
+							<th data-id="" class="oculto hover_link">Eliminar usuario</th>
+							<th data-id="" class="oculto unavailable">
+								Historial de compras
+							</th>
+							<th data-id="" class="oculto unavailable">Nueva compra</th>
+						</tr>
+					</thead>
+					<tbody class="table_body">
+						<tr class="contenedor_informacion_usuario">
+							<td class="sexo campo_informacion casilla_azul">
+								<i class="material-icons"> face </i>
+							</td>
+
+							<td class=" campo_informacion">
+								<p>Samus prueba</p>
+							</td>
+							<td class=" campo_informacion">
+								<p>2121212121</p>
+							</td>
+							<td class="ubicacion campo_informacion">
+								<a href="#" class="ubicacion_link" target="_blank">
+									Direccion Google Maps
+								</a>
+							</td>
+							<td class=" campo_informacion">
+								<p>Calle revolucion #37</p>
+							</td>
+							<td class=" campo_informacion">
+								<p>EntreCalle1</p>
+							</td>
+							<td class=" campo_informacion">
+								<p>EntreCalle2</p>
+							</td>
+							<td class=" campo_informacion">
+								<p>
+									Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+									Voluptates, assumenda quo praesentium corporis possimus quis
+									voluptas? Nihil quia, velit necessitatibus quos nulla veniam?
+									Ipsum sapiente provident doloremque quo incidunt dignissimos?
+								</p>
+							</td>
+							<td class="campo_informacion campo_iconos">
+								<i
+									data-id="123456"
+									class="icono_pulsable content_copy material-icons"
+								>
+									content_copy
+								</i>
+								<i
+									data-id="123456"
+									class=" unavailable add_shopping_cart material-icons"
+								>
+									add_shopping_cart
+								</i>
+								<i
+									data-id="123456"
+									id="123456"
+									class="icono_pulsable more_vert material-icons"
+								>
+									more_vert
+								</i>
+							</td>
+						</tr>
+					</tbody>
 				</table>
 			</main>
 		</div>
 
 		<!--Alertas Alertify-->
 		<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
 		<!-- Alertas CDN SWEET ALERT -->
 		<!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
 

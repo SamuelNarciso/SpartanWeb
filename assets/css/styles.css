@@ -13,6 +13,12 @@
           text-decoration-line: underline;
 }
 
+.hover_link:hover {
+  cursor: pointer;
+  color: #0c7cba;
+  text-decoration: underline;
+}
+
 .btn-azul {
   color: #fefefe;
   background: #4285f4;
@@ -98,6 +104,16 @@
   background: #7070704b;
 }
 
+.icono_pulsable:hover {
+  -webkit-transition: all ease 0.25s;
+  transition: all ease 0.25s;
+  cursor: pointer;
+}
+
+.oculto {
+  display: none;
+}
+
 header {
   padding-top: 5px;
   width: 100%;
@@ -176,10 +192,9 @@ main {
   background: #f1f1f1;
 }
 
-main .contenedor_titulos,
-main tbody {
-  background: #f1f1f1;
-  border-collapse: collapse;
+main .contenedor_usuarios {
+  width: 100%;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -187,189 +202,154 @@ main tbody {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 11%;
-  padding: 0 0px;
-  overflow: auto;
-  width: 100%;
+  background: #f1f1f1;
 }
 
-main .contenedor_titulos .titulos_cabecera,
-main tbody .titulos_cabecera {
+main .contenedor_usuarios .table_titulos {
+  -webkit-box-shadow: 0px 5px 15px -8px #1c2022;
+          box-shadow: 0px 5px 15px -8px #1c2022;
+  width: 100%;
+  height: 14%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 12px;
+}
+
+main .contenedor_usuarios .table_titulos .titulos_cabecera {
+  width: 100%;
+  height: 60%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-shadow: 0 2px 40px -13px #343438;
-          box-shadow: 0 2px 40px -13px #343438;
-  width: 100%;
-  height: 100%;
-  margin-bottom: 10px;
 }
 
-main .contenedor_titulos .titulos_cabecera .sexo,
-main tbody .titulos_cabecera .sexo {
-  width: 5%;
+main .contenedor_usuarios .table_titulos .titulos_cabecera::before {
+  content: '';
+  position: absolute;
+  bottom: 0%;
+  width: 95%;
+  height: 1px;
+  background: rgba(49, 49, 49, 0.514);
 }
 
-main .contenedor_titulos .titulos_cabecera th,
-main tbody .titulos_cabecera th {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  font-weight: 600;
+main .contenedor_usuarios .table_titulos .titulos_cabecera th {
+  width: 10%;
   height: 100%;
-  width: 12%;
+  border-collapse: collapse;
+  font-weight: 500;
+  padding: 0 5px;
   line-height: 100%;
 }
 
-main .contenedor_titulos .titulos_cabecera th .reducido,
-main tbody .titulos_cabecera th .reducido {
-  font-weight: 500;
-}
-
-main .contenedor_usuarios,
-main tbody {
-  background: #f1f1f1;
-  border-collapse: collapse;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  height: 100%;
-  padding: 0 0px;
-  overflow: auto;
-  width: 100%;
-}
-
-main .contenedor_usuarios .titulos_cabecera,
-main tbody .titulos_cabecera {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-shadow: 0 2px 40px -13px #343438;
-          box-shadow: 0 2px 40px -13px #343438;
-  width: 100%;
-  height: 10%;
-  margin-bottom: 10px;
-}
-
-main .contenedor_usuarios .titulos_cabecera .sexo,
-main tbody .titulos_cabecera .sexo {
-  width: 5%;
-}
-
-main .contenedor_usuarios .titulos_cabecera th,
-main tbody .titulos_cabecera th {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  font-weight: 600;
-  height: 100%;
-  width: 12%;
-  line-height: 100%;
-}
-
-main .contenedor_usuarios .titulos_cabecera th .reducido,
-main tbody .titulos_cabecera th .reducido {
-  font-weight: 500;
-}
-
-main .contenedor_usuarios .contenedor_informacion_usuario,
-main tbody .contenedor_informacion_usuario {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  height: 12%;
-  width: 100%;
-  border-radius: 15px;
-  background: #fefefe;
-  -webkit-box-shadow: -2px 8px 28px -16px rgba(0, 0, 0, 0.75);
-          box-shadow: -2px 8px 28px -16px rgba(0, 0, 0, 0.75);
-  margin-bottom: 10px;
-}
-
-main .contenedor_usuarios .contenedor_informacion_usuario .campo_informacion,
-main tbody .contenedor_informacion_usuario .campo_informacion {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 14px;
+main .contenedor_usuarios .table_titulos .titulos_cabecera th .reducido {
   font-weight: 400;
-  height: 100%;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  overflow: auto;
-  padding: 1px;
-  text-align: center;
-  width: 12%;
 }
 
-main .contenedor_usuarios .contenedor_informacion_usuario .campo_iconos,
-main tbody .contenedor_informacion_usuario .campo_iconos {
+main .contenedor_usuarios .table_titulos .titulos_cabecera .sexo {
+  width: 5%;
+}
+
+main .contenedor_usuarios .table_titulos .mas_opciones {
+  width: 100%;
+  height: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
-main .contenedor_usuarios .contenedor_informacion_usuario .ubicacion a,
-main tbody .contenedor_informacion_usuario .ubicacion a {
+main .contenedor_usuarios .table_titulos .mas_opciones th {
+  font-weight: 400;
+}
+
+main .contenedor_usuarios .table_body {
+  background: #f1f1f1;
+  border-collapse: collapse;
+  height: 86%;
+  overflow: auto;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main .contenedor_usuarios .table_body .contenedor_informacion_usuario {
+  background: #fefefe;
+  -webkit-box-shadow: 0px 5px 15px -8px #1c2022;
+          box-shadow: 0px 5px 15px -8px #1c2022;
+  border-radius: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 13%;
+  margin: 5px 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+main .contenedor_usuarios .table_body .contenedor_informacion_usuario .campo_informacion {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  overflow: auto;
+  width: 12%;
+  text-align: center;
+  line-height: 100%;
+  color: #1c2022;
+}
+
+main .contenedor_usuarios .table_body .contenedor_informacion_usuario .sexo {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 5%;
+}
+
+main .contenedor_usuarios .table_body .contenedor_informacion_usuario .sexo i {
+  font-size: 50px;
+  color: #343438;
+}
+
+main .contenedor_usuarios .table_body .contenedor_informacion_usuario .ubicacion a {
   text-decoration: none;
   color: #4285f4;
   font-weight: 500;
 }
 
-main .contenedor_usuarios .contenedor_informacion_usuario .ubicacion a:hover,
-main tbody .contenedor_informacion_usuario .ubicacion a:hover {
+main .contenedor_usuarios .table_body .contenedor_informacion_usuario .ubicacion a:hover {
   text-decoration: underline;
 }
 
-main .contenedor_usuarios .contenedor_informacion_usuario .sexo,
-main tbody .contenedor_informacion_usuario .sexo {
-  border-radius: 15px 0 0 15px;
-  width: 5%;
-  overflow: hidden;
-}
-
-main .contenedor_usuarios .contenedor_informacion_usuario .sexo i,
-main tbody .contenedor_informacion_usuario .sexo i {
-  font-size: 54px;
-  color: #1c2022;
+main .contenedor_usuarios .table_body .contenedor_informacion_usuario .campo_iconos {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .RegistroUsuario {
@@ -391,6 +371,9 @@ main tbody .contenedor_informacion_usuario .sexo i {
       -ms-flex-align: center;
           align-items: center;
   background-color: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .RegistroUsuario .cerrar {
@@ -408,9 +391,10 @@ main tbody .contenedor_informacion_usuario .sexo i {
 }
 
 .RegistroUsuario .camposRegistro {
-  width: 70%;
-  height: 80%;
-  padding: 10px;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 20px -3px black;
+          box-shadow: 2px 2px 20px -3px black;
+  background: #f1f1f1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -420,10 +404,15 @@ main tbody .contenedor_informacion_usuario .sexo i {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  background: #f1f1f1;
+  height: 80%;
+  padding: 10px;
+  width: 70%;
 }
 
 .RegistroUsuario .camposRegistro .icono_campo {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -431,9 +420,6 @@ main tbody .contenedor_informacion_usuario .sexo i {
   margin-bottom: 15px;
   height: 10%;
   width: 100%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .RegistroUsuario .camposRegistro .icono_campo i {
@@ -507,16 +493,6 @@ main tbody .contenedor_informacion_usuario .sexo i {
 .expand {
   -webkit-transform: translateY(0%);
           transform: translateY(0%);
-}
-
-.swal-button {
-  background-color: #db4437;
-  color: #fefefe;
-}
-
-.swal-button:hover {
-  background-color: #db4437;
-  color: #fefefe;
 }
 
 * {

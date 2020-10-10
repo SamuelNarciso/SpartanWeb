@@ -11,6 +11,12 @@
 		// filter: brightness(1.05);
 	}
 }
+
+.hover_link:hover {
+	cursor: pointer;
+	color: #0c7cba;
+	text-decoration: underline;
+}
 .btn-azul {
 	color: $BlancoClaro;
 	background: $AzulRey;
@@ -54,8 +60,6 @@
 	}
 }
 
-
-
 .casilla_azul {
 	background: $AzulClaro;
 }
@@ -79,5 +83,14 @@
 
 .casilla_gris {
 	background: #7070704b;
+}
 
+.icono_pulsable:hover {
+	transition: all ease 0.25s;
+	// transform: scale(1.12);
+	cursor: pointer;
+}
+
+.oculto{
+	display: none;
 }

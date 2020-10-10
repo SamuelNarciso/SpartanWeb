@@ -8,8 +8,12 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	// filter: blur(2px) ;
 	background-color: rgba(255, 255, 255, 0.95);
-	// filter: blur(20px) ;
+
+	backdrop-filter: blur(10px);
+	// backdrop-filter: brightness(1.5) blur(30px);
+	background-color: rgba(255, 255, 255, 0.5);
 	.cerrar {
 		position: absolute;
 		top: 15px;
@@ -23,22 +27,22 @@
 		}
 	}
 	.camposRegistro {
-		width: 70%;
-		height: 80%;
-
-		// border: 3px solid #1348d8; //TODO: Quitar este borde, es unicamente para marcar un area
-		padding: 10px;
+		border-radius: 5px;
+		box-shadow: 02px 2px 20px -3px rgb(0, 0, 0);
+		background: $BlancoOpaco;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
-		background: $BlancoOpaco;
+		height: 80%;
+		padding: 10px;
+		width: 70%;
 		.icono_campo {
+			align-items: center;
 			display: flex;
 			position: relative;
 			margin-bottom: 15px;
 			height: 10%;
 			width: 100%;
-			align-items: center;
 
 			i {
 				position: absolute;
@@ -57,7 +61,7 @@
 				min-height: 125%;
 			}
 		}
-		.boton_link{
+		.boton_link {
 			width: 25%;
 			height: 100%;
 		}
@@ -99,16 +103,18 @@
 	transform: translateY(0%);
 }
 
-.swal-button {
-	// padding: 7px 19px;
-	// border-radius: 2px;
-	background-color: $Rojo;
-	color: $BlancoClaro;
-	// font-size: 12px;
-	// border: 1px solid #3e549a;
-	// text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
-	&:hover{
-		background-color: $Rojo;
-		color: $BlancoClaro;
-	}
-}
+
+
+// .swal-button {
+// 	// padding: 7px 19px;
+// 	// border-radius: 2px;
+// 	background-color: $Rojo;
+// 	color: $BlancoClaro;
+// 	// font-size: 12px;
+// 	// border: 1px solid #3e549a;
+// 	// text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+// 	&:hover {
+// 		background-color: $Rojo;
+// 		color: $BlancoClaro;
+// 	}
+// }

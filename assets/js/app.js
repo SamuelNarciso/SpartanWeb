@@ -13,18 +13,15 @@ const [boton_cancelar, boton_guardar] = document.querySelectorAll(
 const expandir_retraer_usuariosNuevos = () => {
 	const RegistroUsuario = document.querySelector('.RegistroUsuario');
 	RegistroUsuario.classList.toggle('expand');
+	limpiarCampos_nuevoUsuario();
 	document.querySelector('#user_name').focus();
 };
 
 add_user_button.addEventListener('click', () => {
-	limpiarCampos_nuevoUsuario();
 	expandir_retraer_usuariosNuevos();
-	focus_input('user_name');
 });
 cerrar_registro_button.addEventListener('click', () => {
-	limpiarCampos_nuevoUsuario();
 	expandir_retraer_usuariosNuevos();
-	limpiarCampos_nuevoUsuario();
 });
 
 boton_guardar.addEventListener('click', () => {
