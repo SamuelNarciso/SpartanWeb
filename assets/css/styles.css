@@ -198,7 +198,7 @@ main .contenedor_usuarios {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  overflow: auto;
+  overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -222,6 +222,7 @@ main .contenedor_usuarios .table_titulos {
 }
 
 main .contenedor_usuarios .table_titulos .titulos_cabecera {
+  padding: 4px 0;
   width: 100%;
   height: 60%;
   position: relative;
@@ -281,17 +282,8 @@ main .contenedor_usuarios .table_titulos .mas_opciones th {
 main .contenedor_usuarios .table_body {
   background: #f1f1f1;
   border-collapse: collapse;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
   height: 86%;
-  overflow: auto;
+  overflow-y: auto;
   width: 100%;
 }
 
@@ -303,8 +295,8 @@ main .contenedor_usuarios .table_body .contenedor_informacion_usuario {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 13%;
-  margin: 5px 0;
+  height: 14%;
+  margin: 12px 0;
   overflow: hidden;
   width: 100%;
 }
@@ -316,6 +308,7 @@ main .contenedor_usuarios .table_body .contenedor_informacion_usuario .campo_inf
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding: 2px 0;
   height: 100%;
   overflow: auto;
   width: 12%;

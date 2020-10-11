@@ -1,6 +1,6 @@
 const db = firebase.firestore();
 const contenedor_usuarios = document.querySelector(
-	'.contenedor_usuarios tbody'
+	'.contenedor_usuarios .table_body'
 );
 export const guardarDatos_usuarioNuevo = (
 	nombre,
