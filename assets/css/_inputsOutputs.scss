@@ -84,6 +84,9 @@
 .casilla_gris {
 	background: #7070704b;
 }
+.casilla_blanca {
+	background: $BlancoClaro;
+}
 
 .icono_pulsable:hover {
 	transition: all ease 0.25s;
@@ -91,6 +94,6 @@
 	cursor: pointer;
 }
 
-.oculto{
+.oculto {
 	display: none;
 }

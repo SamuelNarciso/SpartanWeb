@@ -32,3 +32,26 @@ boton_cancelar.addEventListener('click', () => {
 	limpiarCampos_nuevoUsuario();
 	expandir_retraer_usuariosNuevos();
 });
+
+const tresPuntos_masOpciones_usuario = document.querySelector('.table_body');
+tresPuntos_masOpciones_usuario.addEventListener('click', (e) => {
+	// console.log(e.target.dataset.id);
+	// console.log(tresPuntos_masOpciones_usuario.childNodes);
+	// tresPuntos_masOpciones_usuario.childNodes.forEach((elemento) => {
+	// 	// console.log(elemento.id);
+	// 	if (elemento.id) {
+	// 		// console.log(elemento.classList);
+	// 		if (elemento.classList.contains('casilla_gris')) {
+	// 			elemento.classList.toggle('casilla_gris');
+	// 			// elemento.classList.toggle('casilla_blanca');
+	// 		}
+	// 	}
+	// });
+	if (e.target.dataset.id) {
+		const CampoUsuarioSeleccionado = document.getElementById(
+			e.target.dataset.id
+		);
+		CampoUsuarioSeleccionado.classList.toggle('casilla_gris');
+		CampoUsuarioSeleccionado.classList.toggle('casilla_blanca');
+	}
+});

@@ -50,7 +50,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
 			usuario.id = doc.id;
 
 			contenedor_usuarios.innerHTML += `
-			<tr class="contenedor_informacion_usuario">
+			<tr id='${usuario.id}' class="contenedor_informacion_usuario casilla_blanca">
 						<td class="sexo campo_informacion ${
 							usuario.sexo == 'hombre'
 								? 'casilla_azul'
@@ -94,7 +94,7 @@ window.addEventListener('DOMContentLoaded', async (e) => {
 							
 							<i data-id='${usuario.id}'  class="  icono_pulsable content_copy  material-icons"> content_copy </i>
 							<i data-id='${usuario.id}'  class=" unavailable  add_shopping_cart  material-icons"> add_shopping_cart </i>
-							<i data-id='${usuario.id}' id='${usuario.id}' class=" icono_pulsable more_vert  material-icons"> more_vert </i>
+							<i data-id='${usuario.id}'  class=" icono_pulsable more_vert  material-icons"> more_vert </i>
 						</td>
 					
 					</tr>

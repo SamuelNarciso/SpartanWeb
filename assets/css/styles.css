@@ -104,6 +104,10 @@
   background: #7070704b;
 }
 
+.casilla_blanca {
+  background: #fefefe;
+}
+
 .icono_pulsable:hover {
   -webkit-transition: all ease 0.25s;
   transition: all ease 0.25s;
@@ -288,7 +292,6 @@ main .contenedor_usuarios .table_body {
 }
 
 main .contenedor_usuarios .table_body .contenedor_informacion_usuario {
-  background: #fefefe;
   -webkit-box-shadow: 0px 5px 15px -8px #1c2022;
           box-shadow: 0px 5px 15px -8px #1c2022;
   border-radius: 12px;
