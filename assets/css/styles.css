@@ -15,7 +15,6 @@
 
 .hover_link:hover {
   cursor: pointer;
-  color: #0c7cba;
   text-decoration: underline;
 }
 
@@ -37,32 +36,7 @@
 .btn-blanco {
   color: #1c2022;
   background: #fefefe;
-  border: 1px solid #343438;
-}
-
-.link {
-  -webkit-text-decoration-line: none;
-          text-decoration-line: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 100%;
-  font-size: 14px;
-  font-weight: 500;
-  border-radius: 2px;
-  border: none;
-}
-
-.link:hover {
-  cursor: pointer;
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
+  border: 1px dotted #343438;
 }
 
 .unavailable {
@@ -118,81 +92,121 @@
   display: none;
 }
 
+.color_azul {
+  color: #4285f4;
+}
+
+.color_rojo {
+  color: #db4437;
+}
+
+.color_verde {
+  color: #0f9d58;
+}
+
+.color_Amarillo {
+  color: #f4b400;
+}
+
 header {
-  padding-top: 5px;
   width: 100%;
-  height: 20%;
+  height: 8%;
+  background: #4285f4;
+  margin-bottom: 5px;
+  -webkit-box-shadow: 0 0 20px 1px #343438;
+          box-shadow: 0 0 20px 1px #343438;
 }
 
 header .cabecera_busqueda {
-  height: 35%;
+  padding: 0 10px;
+  width: 100%;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 header .cabecera_busqueda .input_icono {
+  height: 100%;
   width: 50%;
-  height: 100%;
   position: relative;
-}
-
-header .cabecera_busqueda .input_icono #buscar_usuario {
-  width: 100%;
-  height: 100%;
-  border: 1px solid #1c2022;
-  padding-left: 35px;
-  color: #343438;
-  font-size: 18px;
-  border-radius: 5px 0 0 5px;
-}
-
-header .cabecera_busqueda .input_icono .material-icons {
-  position: absolute;
-  left: 5px;
-  top: 0.35em;
-  color: #4285f4;
-  font-size: 26px;
-}
-
-header .cabecera_busqueda .button_busqueda {
-  width: 10%;
-  height: 100%;
-  position: relative;
-}
-
-header .cabecera_botones {
-  height: 65%;
-}
-
-header .cabecera_botones ul {
-  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-header .cabecera_botones ul li {
-  height: 65%;
+header .cabecera_busqueda .input_icono i {
+  position: absolute;
+  color: #fefefe;
+  font-size: 26px;
+}
+
+header .cabecera_busqueda .input_icono input {
+  position: relative;
+  padding: 0 28px;
+  color: #fefefe;
+  height: 85%;
+  width: 50%;
+  background: none;
+  border: none;
+  font-weight: 500;
+  border-bottom: 2.5px solid #fefefe;
+  -webkit-transition: all ease .5s;
+  transition: all ease .5s;
+}
+
+header .cabecera_busqueda .input_icono input:focus {
+  border: none;
+  border-bottom: 2.5px solid #fefefe;
+  width: 100%;
+}
+
+header .cabecera_busqueda ul {
+  height: 100%;
+  width: 50%;
   list-style: none;
-  width: 18%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+header .cabecera_busqueda ul li {
+  width: 33%;
+}
+
+header .cabecera_busqueda ul li .boton_link {
+  width: 100%;
+  height: 92%;
+  background: none;
+  border: none;
+  color: #fefefe;
+  border-bottom: 2.5px solid #4285f4;
+  -webkit-transition: all ease .3s;
+  transition: all ease .3s;
+}
+
+header .cabecera_busqueda ul li .boton_link:hover {
+  border-bottom: 2.5px solid #fefefe;
+  cursor: pointer;
 }
 
 main {
   width: 100%;
-  height: 80%;
+  height: 91%;
   background: #f1f1f1;
 }
 
@@ -283,6 +297,12 @@ main .contenedor_usuarios .table_titulos .mas_opciones th {
   font-weight: 400;
 }
 
+main .contenedor_usuarios .table_titulos .mas_opciones .mini {
+  font-weight: 300;
+  font-size: 14px;
+  color: #343438;
+}
+
 main .contenedor_usuarios .table_body {
   background: #f1f1f1;
   border-collapse: collapse;
@@ -329,6 +349,7 @@ main .contenedor_usuarios .table_body .contenedor_informacion_usuario .sexo {
 
 main .contenedor_usuarios .table_body .contenedor_informacion_usuario .sexo i {
   font-size: 50px;
+  overflow: hidden;
   color: #343438;
 }
 
@@ -417,7 +438,7 @@ main .contenedor_usuarios .table_body .contenedor_informacion_usuario .campo_ico
   display: flex;
   position: relative;
   margin-bottom: 15px;
-  height: 10%;
+  height: 9%;
   width: 100%;
 }
 
@@ -458,13 +479,21 @@ main .contenedor_usuarios .table_body .contenedor_informacion_usuario .campo_ico
 }
 
 .RegistroUsuario .camposRegistro .campo_sexo {
-  width: 100%;
+  height: 100%;
+  width: 35%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.RegistroUsuario .camposRegistro .campo_sexo i {
+.RegistroUsuario .camposRegistro .campo_sexo span {
+  font-size: 32px;
+  color: #343438;
   margin-right: 6px;
 }
 
@@ -487,6 +516,34 @@ main .contenedor_usuarios .table_body .contenedor_informacion_usuario .campo_ico
 
 .RegistroUsuario .camposRegistro .campo_botones input {
   width: 20%;
+}
+
+.RegistroUsuario .camposRegistro .campo_con_links {
+  margin-right: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.RegistroUsuario .campo_link input {
+  padding-right: 32px;
+}
+
+.RegistroUsuario .campo_link #google_maps_link {
+  position: absolute;
+  right: 0%;
+  font-size: 30px;
+  color: #343438;
+}
+
+.RegistroUsuario .campo_link #google_maps_link:hover {
+  -webkit-transition: all ease 0.2s;
+  transition: all ease 0.2s;
+  cursor: pointer;
+  color: #4285f4;
 }
 
 .expand {

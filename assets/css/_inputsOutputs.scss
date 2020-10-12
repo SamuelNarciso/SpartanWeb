@@ -14,7 +14,6 @@
 
 .hover_link:hover {
 	cursor: pointer;
-	color: #0c7cba;
 	text-decoration: underline;
 }
 .btn-azul {
@@ -32,25 +31,10 @@
 .btn-blanco {
 	color: $GrisOscuro;
 	background: $BlancoClaro;
-	border: 1px solid $GrisClaro;
+	border: 1px dotted $GrisClaro;
 }
 
-.link {
-	text-decoration-line: none;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 100%;
-	font-size: 14px;
-	font-weight: 500;
-	border-radius: 2px;
-	border: none;
-	&:hover {
-		cursor: pointer;
-		text-decoration-line: underline;
-		// filter: brightness(1.05);
-	}
-}
+
 .unavailable {
 	opacity: 50%;
 	filter: brightness(0.5);
@@ -96,4 +80,17 @@
 
 .oculto {
 	display: none;
+}
+
+.color_azul {
+	color: $AzulRey;
+}
+.color_rojo {
+	color: $Rojo;
+}
+.color_verde {
+	color: $Verde;
+}
+.color_Amarillo {
+	color: $Amarillo;
 }

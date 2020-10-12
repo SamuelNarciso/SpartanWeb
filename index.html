@@ -51,7 +51,7 @@
 						placeholder="Direccion"
 					/>
 				</div>
-				<div class="icono_campo icono_campo_medio">
+				<div class="icono_campo icono_campo_medio campo_link">
 					<i class="material-icons">location_on</i>
 					<input
 						class="campo campo_completo texto-azul"
@@ -59,6 +59,7 @@
 						id="user_ubicacion"
 						placeholder="Ubicacion"
 					/>
+					<span id="google_maps_link" class="material-icons">public</span>
 				</div>
 				<div class="icono_campo icono_campo_medio">
 					<input
@@ -95,34 +96,39 @@
 					></textarea>
 				</div>
 
-				<div class="campo_sexo">
-					<i class="material-icons">face</i>
-					<form>
-						<label for="femenino">Femenino</label>
-						<input type="radio" name="sexo" id="femenino" />
-						<label for="masculino">Masculino</label>
-						<input type="radio" name="sexo" id="masculino" />
-					</form>
+				<div class="icono_campo campo_con_links">
+					<div class="campo_sexo">
+						<span class="material-icons">face</span>
+						<form>
+							<label for="femenino">Femenino</label>
+							<input type="radio" name="sexo" id="femenino" />
+							<label for="masculino">Masculino</label>
+							<input type="radio" name="sexo" id="masculino" />
+						</form>
+					</div>
+					<p id="historial_compras"     class="oculto hover_link color_azul">historial de compras</p>
+					<p id="historial_ubicaciones" class="oculto hover_link color_azul">historial de ubicaciones</p>
 				</div>
 
 				<div class="campo_botones">
 					<input
+					id="nuevo_usuario_Eliminar"
 						type="button"
-						id="nuevo_usuario_Eliminar"
 						value="Cancelar"
 						class="boton btn-rojo"
 					/>
-
-					<div class="boton_link">
-						<a
-							id="google_maps"
-							class="link btn-verde"
-							href="https://www.google.com.mx/maps"
-							target="_blank"
-						>
-							Buscar Google Maps
-						</a>
-					</div>
+					<input
+						type="button"
+						id="nuevo_usuario_CopiarDatos"
+						value="Copiar datos"
+						class="oculto boton btn-verde"
+					/>
+					<input
+						type="button"
+						id="nuevo_usuario_Editar"
+						value="Editar"
+						class="oculto boton btn-blanco"
+					/>
 
 					<input
 						type="button"
@@ -138,40 +144,39 @@
 			<header>
 				<nav class="cabecera_busqueda">
 					<span class="input_icono">
+						<i class="material-icons"> search </i>
 						<input
 							type="text"
 							id="buscar_usuario"
 							placeholder="Nombre del usuario o Numero de telefono "
 						/>
-						<i class="material-icons"> search </i>
 					</span>
-				</nav>
-				<nav class="cabecera_botones">
+
 					<ul>
 						<li>
 							<input
+								id="add_user"
 								type="button"
-								class="unavailable boton btn-azul"
+								class="boton_link"
+								value="Añadir nuevo usuario"
+							/>
+						</li>
+						<!-- <li>
+							<input
+								type="button"
+								class=" unavailable boton_link"
 								value="Historial de servicios"
 								disabled
 							/>
 						</li>
 						<li>
 							<input
-								id="add_user"
 								type="button"
-								class="boton btn-azul"
-								value="Añadir nuevo usuario"
-							/>
-						</li>
-						<li>
-							<input
-								type="button"
-								class="unavailable boton btn-azul"
+								class="unavailable boton_link"
 								value="Nuevo servicio"
 								disabled
 							/>
-						</li>
+						</li> -->
 					</ul>
 				</nav>
 			</header>
@@ -194,11 +199,12 @@
 							<th>Mas opciones</th>
 						</tr>
 						<!-- <tr  class="oculto mas_opciones" data-id=""> -->
-						<tr  class="oculto " id="mas_opciones" data-id="">
-							<th data-id="" class="hover_link">Datos completos</th>
-							<th data-id="" class="hover_link">Eliminar usuario</th>
-							<th data-id="" class="unavailable">Historial de compras</th>
-							<th data-id="" class="oculto unavailable">Nueva compra</th>
+						<tr class="mas_opciones" id="mas_opciones" data-id="">
+							<!-- <th class="mini"> Usuario: 123456</th>
+							<th data-id="" class="hover_link color_azul">Datos completos</th>
+							<th data-id="" class="hover_link color_rojo">Eliminar usuario</th>
+							<th data-id="" class="oculto unavailable">Historial de compras</th>
+							<th data-id="" class="oculto unavailable">Nueva compra</th> -->
 						</tr>
 					</thead>
 					<tbody class="table_body">
