@@ -39,6 +39,11 @@
   border: 1px dotted #343438;
 }
 
+.btn-amarillo {
+  color: #fefefe;
+  background: #f4b400;
+}
+
 .unavailable {
   opacity: 50%;
   -webkit-filter: brightness(0.5);

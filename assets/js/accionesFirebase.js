@@ -1,4 +1,4 @@
-const db = firebase.firestore();
+export const db = firebase.firestore();
 const contenedor_usuarios = document.querySelector(
 	'.contenedor_usuarios .table_body'
 );
