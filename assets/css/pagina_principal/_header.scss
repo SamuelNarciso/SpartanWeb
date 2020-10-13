@@ -33,6 +33,9 @@ header {
 				font-weight: 500;
 				border-bottom: 2.5px solid $BlancoClaro;
 				transition: all ease .5s;
+				&::placeholder{
+					color: $BlancoOpaco;
+				}
 				&:focus  {
 					border: none;
 					

@@ -1,4 +1,7 @@
-import {guardarDatos_usuarioNuevo} from './accionesFirebase.js';
+import {
+	guardarDatos_usuarioNuevo,
+	eliminar_usuario as eliminar_usuario_firebase,
+} from './accionesFirebase.js';
 
 export const verificarCampo_guardarDatos = async () => {
 	const sexo = document.querySelector('#femenino').checked
@@ -44,6 +47,30 @@ export const limpiarCampos_nuevoUsuario = () => {
 	campos_inputs.forEach((campo) => {
 		campo.value = '';
 	});
+};
 
-	
+const mensajeEliminar = (id, nombre) => {
+	swal({
+		title: `Estas seguro que quieres eliminar a ${nombre}?`,
+		text:
+			'Una vez eliminado no podras recuperarlo, deberas registrarlo nuevamente.',
+		icon: 'warning',
+		buttons: [true, 'Si!, Quiero eliminarlo'],
+
+		dangerMode: true,
+	}).then((willDelete) => {
+		if (willDelete) {
+			swal(`Se ha borrado a ${nombre} de la base de datos`, {});
+			eliminar_usuario_firebase(id);
+			limpiarCampos_nuevoUsuario();
+			document.getElementById('mas_opciones').innerHTML = '';
+		} else {
+			swal(`No se ha eliminado a ${nombre}.`);
+			document.getElementById('mas_opciones').innerHTML = '';
+		}
+	});
+};
+
+export const eliminar_usuario = (id, nombre) => {
+	mensajeEliminar(id, nombre);
 };
