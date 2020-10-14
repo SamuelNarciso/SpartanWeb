@@ -3,6 +3,7 @@ const contenedor_usuarios = document.querySelector(
 	'.contenedor_usuarios .table_body'
 );
 export const guardarDatos_usuarioNuevo = (
+	texto_boton,
 	nombre,
 	telefono,
 	direccion,
@@ -33,14 +34,25 @@ export const guardarDatos_usuarioNuevo = (
 			compras: [],
 		})
 		.then(function (docRef) {
-			alertify.success('Usuario registrado correctamente');
+			switch (texto_boton) {
+				case 'Guardar':
+					alertify.success('Usuario registrado correctamente');
+					break;
+				case 'Actualizar':
+					alertify.success('Usuario actualizado correctamente');
+					break;
+				default:
+					alertify.success('Operacion realizada correctamente');
+					break;
+			}
 		})
 		.catch(function (error) {
 			alertify.error('Error en el registro del usuario.');
 		});
 };
 
-export const onGetUsers = (callback) => db.collection('usuarios').onSnapshot(callback);
+export const onGetUsers = (callback) =>
+	db.collection('usuarios').onSnapshot(callback);
 
 export const bloques_usuarios_HTML = (usuario) => {
 	contenedor_usuarios.innerHTML += `
@@ -106,9 +118,9 @@ window.addEventListener('DOMContentLoaded', async (e) => {
 	onGetUsers((querySnapshot) => {
 		contenedor_usuarios.innerHTML = '';
 		querySnapshot.forEach((doc) => {
-			const usuario = doc.data();
+			let usuario = doc.data();
 			usuario.id = doc.id;
-			bloques_usuarios_HTML(doc.data());
+			bloques_usuarios_HTML(usuario);
 		});
 	});
 });
@@ -118,7 +130,7 @@ export const eliminar_usuario = (id_usuario) => {
 		.doc(id_usuario)
 		.delete()
 		.then(function () {
-			alertify.message('Se ha eliminado el usuario correctamente');
+			alertify.warning('Se ha eliminado el usuario');
 			// console.log('Document successfully deleted!');
 		})
 		.catch(function (error) {
@@ -140,6 +152,8 @@ export const busqueda_unico_usuario = (
 		comentariosExtra,
 	]
 ) => {
+	// console.log(id_usuario_selecciondo);
+
 	db.collection('usuarios')
 		.where('NumeroTelefonico', '==', `${id_usuario_selecciondo}`)
 		.get()

@@ -3,7 +3,7 @@ import {
 	eliminar_usuario as eliminar_usuario_firebase,
 } from './accionesFirebase.js';
 
-export const verificarCampo_guardarDatos = async () => {
+export const verificarCampo_guardarDatos = async (texto_boton) => {
 	const sexo = document.querySelector('#femenino').checked
 		? 'mujer'
 		: document.querySelector('#masculino').checked
@@ -26,6 +26,7 @@ export const verificarCampo_guardarDatos = async () => {
 	}
 	if (nombre.value && telefono.value && sexo) {
 		await guardarDatos_usuarioNuevo(
+			texto_boton,
 			nombre.value,
 			telefono.value,
 			direccion.value,

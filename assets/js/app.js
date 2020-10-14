@@ -24,8 +24,8 @@ const campo_buscar_usuario = document.querySelector('#buscar_usuario');
 // Relaciones para nuevo usuario.
 const [
 	boton_cancel_elimina,
-	boton_cancelar,
 	boton_copiar,
+	boton_cancelar,
 	boton_guardar,
 ] = document.querySelectorAll('.campo_botones .boton');
 // FIN Relaciones para nuevo usuario.
@@ -66,7 +66,10 @@ boton_cancelar.addEventListener('click', () => {
 });
 
 boton_guardar.addEventListener('click', () => {
-	verificarCampo_guardarDatos();
+	verificarCampo_guardarDatos(boton_guardar.value);
+	if (boton_guardar.value == 'Guardar') {
+		limpiarCampos_nuevoUsuario();
+	}
 });
 
 boton_cancel_elimina.addEventListener('click', () => {
@@ -96,8 +99,7 @@ tresPuntos_masOpciones_usuario.addEventListener('click', (e) => {
 });
 
 mas_opciones_panel.addEventListener('click', (e) => {
-	// console.log(e.target.dataset.id);
-
+	// console.log(e.target.dataset);
 	if (e.target.textContent == 'Datos completos') {
 		expandir_retraer_usuariosNuevos();
 		const id_usuario_selecciondo = e.target.dataset.id;
@@ -110,64 +112,45 @@ mas_opciones_panel.addEventListener('click', (e) => {
 		const campos_datos_usuario = document.querySelectorAll(
 			'.camposRegistro .campo'
 		);
+
 		busqueda_unico_usuario(id_usuario_selecciondo, campos_datos_usuario);
 	} else if (e.target.textContent == 'Eliminar usuario') {
 		eliminar_usuario(e.target.dataset.id, e.target.dataset.nombre);
 	}
 });
 
-campo_buscar_usuario.addEventListener('keyup', () => {
-	console.log(campo_buscar_usuario.value);
-	if (campo_buscar_usuario.value) {
-		if (!isNaN(campo_buscar_usuario.value)) {
-			document.querySelector('.contenedor_usuarios .table_body').innerHTML = '';
+campo_buscar_usuario.addEventListener('keyup', (e) => {
+	if (e.key == 'Enter' || !campo_buscar_usuario.value) {
+		if (campo_buscar_usuario.value) {
+			document.querySelector('.table_body').innerHTML = '';
 
 			db.collection('usuarios')
-				.orderBy('NumeroTelefonico')
+				.orderBy(
+					!isNaN(campo_buscar_usuario.value) ? 'NumeroTelefonico' : 'Nombre'
+				)
 				.startAt(campo_buscar_usuario.value)
 				.endAt(campo_buscar_usuario.value + '~')
 				.get()
 				.then(function (querySnapshot) {
 					querySnapshot.forEach(function (doc) {
-						// console.log(doc.id, ' => ', doc.data());
-						// console.log(doc.data());
-						bloques_usuarios_HTML(doc.data());
+						let usuario = doc.data();
+						usuario.id = doc.id;
+						bloques_usuarios_HTML(usuario);
 					});
 				})
 				.catch(function (error) {
-					console.log('Error getting documents: ', error);
+					// console.log('Error getting documents: ', error);
 				});
 		} else {
-			document.querySelector('.contenedor_usuarios .table_body').innerHTML = '';
-
-			db.collection('usuarios')
-				.orderBy('Nombre')
-				.startAt(campo_buscar_usuario.value)
-				.endAt(campo_buscar_usuario.value + '~')
-				.get()
-				.then(function (querySnapshot) {
-					querySnapshot.forEach(function (doc) {
-						// console.log(doc.id, ' => ', doc.data());
-						bloques_usuarios_HTML(doc.data());
-						// console.log(doc.data());
-					});
-				})
-				.catch(function (error) {
-					console.log('Error getting documents: ', error);
+			onGetUsers((querySnapshot) => {
+				document.querySelector('.contenedor_usuarios .table_body').innerHTML =
+					'';
+				querySnapshot.forEach((doc) => {
+					let usuario = doc.data();
+					usuario.id = doc.id;
+					bloques_usuarios_HTML(usuario);
 				});
-		}
-	} else {
-		console.log('vacio!!!!!!!!!!');
-
-		onGetUsers((querySnapshot) => {
-			document.querySelector('.contenedor_usuarios .table_body').innerHTML = '';
-			querySnapshot.forEach((doc) => {
-				bloques_usuarios_HTML(doc.data());
 			});
-		});
+		}
 	}
-
-	console.log(
-		'----------------------------------------------------------------------------------------------------------------------------- \n\n\n'
-	);
 });
