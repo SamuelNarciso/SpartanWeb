@@ -12,15 +12,17 @@ header {
 		flex-direction: row;
 		.input_icono {
 			height: 100%;
-			width: 50%;
+			// width: 50%; cuando sean las 3 opciones el ancho sera de 50
+			width: 70%;
 			position: relative;
 			display: flex;
 			justify-content: start;
 			align-items: center;
-			i{
+			i {
 				position: absolute;
 				color: $BlancoClaro;
-				font-size: 26px;
+				// font-size: calc (26px+ 1vw);
+				font-size: calc(16px + 6 * ((100vw - 320px) / 680));
 			}
 			input {
 				position: relative;
@@ -32,13 +34,13 @@ header {
 				border: none;
 				font-weight: 500;
 				border-bottom: 2.5px solid $BlancoClaro;
-				transition: all ease .5s;
-				&::placeholder{
+				transition: all ease 0.5s;
+				&::placeholder {
 					color: $BlancoOpaco;
 				}
-				&:focus  {
+				&:focus {
 					border: none;
-					
+
 					border-bottom: 2.5px solid $BlancoClaro;
 					width: 100%;
 				}
@@ -46,27 +48,59 @@ header {
 		}
 		ul {
 			height: 100%;
-			width: 50%;
+			// width: 50%; cuando sean los 3 botones, si mediran 50%
+			width: 30%;
 			list-style: none;
 			display: flex;
 			flex-direction: row;
-
+			justify-content: center;
+			align-items: center;
 			li {
-				width: 33%;
-
+				// width: 32%; cuando sean los 3 botones si mediran 32%
+					width: 100%;
+				height: 100%;
 				.boton_link {
+					$min_width: 320px;
+					$max_width: 1400px;
+					$min_font: 10px;
+					$max_font: 16px;
+
+					@include fluid-type($min_width, $max_width, $min_font, $max_font);
+
+					word-wrap: break-word;
 					width: 100%;
 					height: 92%;
 					background: none;
 					border: none;
-					color: $BlancoClaro;	
+					color: $BlancoClaro;
 					border-bottom: 2.5px solid $AzulRey;
-					transition: all ease .3s;
-					&:hover{
+					transition: all ease 0.3s;
+					
+					&:hover {
 						border-bottom: 2.5px solid $BlancoClaro;
 						cursor: pointer;
 					}
 				}
+			}
+		}
+	}
+}
+// @media screen and (min-width: 320px) {
+
+@media screen and (max-width: 1000px) {
+	header .cabecera_busqueda {
+		.input_icono {
+			width: 70%;
+
+			input {
+				width: 80%;
+			}
+		}
+		ul {
+			width: 30%;
+			li {
+				width: 100%;
+				word-wrap: break-word;
 			}
 		}
 	}

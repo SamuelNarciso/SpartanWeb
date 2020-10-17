@@ -2,6 +2,10 @@ main {
 	width: 100%;
 	height: 91%;
 	background: $BlancoOpaco;
+	$min_width: 320px;
+	$max_width: 1400px;
+	$min_font: 10px;
+	$max_font: 16px;
 
 	.contenedor_usuarios {
 		width: 100%;
@@ -12,7 +16,7 @@ main {
 		flex-direction: column;
 		background: $BlancoOpaco;
 		.table_titulos {
-			box-shadow: 0px 5px 15px -8px $GrisOscuro;
+			box-shadow: 0px 5px 15px -12px $GrisOscuro;
 			width: 100%;
 			height: 14%;
 			display: flex;
@@ -25,8 +29,8 @@ main {
 				height: 60%;
 				position: relative;
 				display: flex;
-				align-items: center;
-				justify-content: space-around;
+				justify-content: space-between;
+
 				&::before {
 					content: '';
 					position: absolute;
@@ -36,12 +40,14 @@ main {
 					background: rgba(49, 49, 49, 0.514);
 				}
 				th {
-					width: 10%;
+					@include fluid-type($min_width, $max_width, $min_font, $max_font);
+					width: 12%;
 					height: 100%;
 					border-collapse: collapse;
 					font-weight: 500;
 					padding: 0 5px;
 					line-height: 100%;
+					flex: 1 1 auto;
 					.reducido {
 						font-weight: 400;
 					}
@@ -58,12 +64,15 @@ main {
 				justify-content: space-around;
 
 				th {
+					@include fluid-type($min_width, $max_width, $min_font, $max_font);
+
 					font-weight: 400;
 					// color: $GrisOscuro;
 				}
-				.mini{
+				.mini {
 					font-weight: 300;
-					font-size: 14px;
+					// font-size: 14px;
+					@include fluid-type($min_width, $max_width, $min_font, $max_font);
 					color: $GrisClaro;
 				}
 			}
@@ -75,31 +84,39 @@ main {
 			height: 86%;
 			overflow-y: auto;
 			width: 100%;
+			display: flex;
+			justify-content: flex-start;
+			// align-items: flex-start;
+			flex-direction: column;
 			.contenedor_informacion_usuario {
-		
-				box-shadow: 0px 5px 15px -8px $GrisOscuro;
+				box-shadow: 0px 5px 15px -14px $GrisOscuro;
 				border-radius: 12px;
 				display: flex;
+				justify-content: space-between;
 				height: 14%;
-				margin: 12px 0;
+				margin: 6px 0;
 				overflow: hidden;
 				width: 100%;
+				// justify-content: space-between;
 				.campo_informacion {
-					justify-content: center;
-					display: flex;
-					padding: 2px 0;
+					text-align: center;
+					flex: 1 1 auto;
 					height: 100%;
 					overflow: auto;
 					width: 12%;
-					text-align: center;
 					line-height: 100%;
 					color: $GrisOscuro;
+					@include fluid-type($min_width, $max_width, $min_font, $max_font);
 				}
 				.sexo {
+					display: flex;
+					justify-content: center;
 					align-items: center;
 					width: 5%;
+					height: 100%;
 					i {
-						font-size: 50px;
+						@include fluid-type($min_width, $max_width, 24px, 50px);
+
 						overflow: hidden;
 						color: $GrisClaro;
 					}
@@ -117,103 +134,43 @@ main {
 				.campo_iconos {
 					align-items: center;
 					justify-content: space-evenly;
+					i {
+						@include fluid-type($min_width, $max_width, 18px, 24px);
+					}
 				}
 			}
 		}
 	}
-
-	// tbody {
-	// 	background: $BlancoOpaco;
-	// 	border-collapse: collapse;
-	// 	display: flex;
-	// 	flex-direction: column;
-	// 	height: 100%;
-	// 	padding: 0 0px;
-	// 	overflow: auto;
-	// 	width: 100%;
-
-	// 	.contenedor_informacion_usuario {
-	// 		display: flex;
-	// 		flex-direction: row;
-	// 		height: 12%;
-	// 		width: 100%;
-	// 		border-radius: 15px;
-	// 		background: $BlancoClaro;
-	// 		box-shadow: -2px 8px 28px -16px rgba(0, 0, 0, 0.75);
-	// 		margin-bottom: 10px;
-
-	// 		.campo_informacion {
-	// 			display: flex;
-	// 			font-size: 14px;
-	// 			font-weight: 400;
-	// 			height: 100%;
-	// 			justify-content: space-around;
-	// 			overflow: auto;
-	// 			padding: 1px;
-	// 			text-align: center;
-	// 			width: 12%;
-	// 		}
-
-	// 		.campo_iconos {
-	// 			align-items: center;
-	// 			// overflow: auto;
-	// 			overflow: inherit;
-	// 		}
-	// 		.ubicacion a {
-	// 			text-decoration: none;
-	// 			color: $AzulRey;
-	// 			font-weight: 500;
-
-	// 			&:hover {
-	// 				text-decoration: underline;
-	// 			}
-	// 		}
-	// 		.sexo {
-	// 			border-radius: 15px 0 0 15px;
-	// 			width: 5%;
-	// 			overflow: hidden;
-	// 			i {
-	// 				font-size: 54px;
-	// 				color: $GrisOscuro;
-	// 			}
-	// 		}
-	// 	}
-	// }
 }
 
-// .mas_opciones {
-// 	position: absolute;
-// 	bottom: 70%;
-// 	right: 0%;
-// 	background: $BlancoClaro;
-// 	width: 210px;
-// 	height: 100%;
-// 	display: flex;
-// 	flex-direction: column;
-// 	border-radius: 6px;
-// 	box-shadow: 0px 0px 15px -4px $GrisOscuro;
-// 	z-index: 500;
-// 	.opcion {
-// 		display: flex;
-// 		align-items: center;
-// 		justify-content: center;
-// 		width: 100%;
-// 		height: 100%;
-// 		font-weight: 500;
-// 		font-size: 18px;
-// 		&:hover {
-// 			cursor: pointer;
-// 			background: $BlancoOpaco;
-// 		}
-// 	}
+@media screen and(max-width: 800px) {
+	.contenedor_usuarios .ipad {
+		display: none;
+	}
 
-// 	.opcion-eliminar {
-// 		position: relative;
-// 		color: $Rojo;
-// 		font-weight: 700;
-// 		border-bottom: none;
-// 		&:hover {
-// 			cursor: pointer;
-// 		}
-// 	}
-// }
+	.contenedor_usuarios .table_titulos .titulos_cabecera th {
+		width: 16%;
+	}
+
+	.contenedor_usuarios.table_body
+		.contenedor_informacion_usuario
+		.campo_informacion {
+		width: 16%;
+	}
+}
+
+@media screen and(max-width: 500px) {
+	.contenedor_usuarios .celular {
+		display: none;
+	}
+
+	.contenedor_usuarios .table_titulos .titulos_cabecera th {
+		width: 16%;
+	}
+
+	.contenedor_usuarios.table_body
+		.contenedor_informacion_usuario
+		.campo_informacion {
+		width: 16%;
+	}
+}

@@ -79,19 +79,19 @@ export const bloques_usuarios_HTML = (usuario) => {
 								class="ubicacion_link"
 								target="_blank"
 							>
-								Direccion Google Maps
+								Ubicacion Google Maps
 							</a>
 						</td>
 						<td class=" campo_informacion">
 							<p> ${usuario.Direcciones[0].DireccionTexto}</p>
 						</td>
-						<td class=" campo_informacion">
+						<td class="  campo_informacion ipad">
 							<p> ${usuario.Direcciones[0].EntreCalle1}</p>
 						</td>
-						<td class=" campo_informacion">
+						<td class=" campo_informacion ipad ">
 							<p>${usuario.Direcciones[0].EntreCalle2}</p>
 						</td>
-						<td class=" campo_informacion">
+						<td class=" campo_informacion celular">
 							<p>
 							${usuario.Direcciones[0].ReferenciasExtra}
 							</p>

@@ -1,4 +1,8 @@
 .RegistroUsuario {
+	$min_width: 320px;
+	$max_width: 1400px;
+	$min_font: 10px;
+	$max_font: 16px;
 	transition: all ease 0.8s;
 	position: absolute;
 	transform: translateY(-100%);
@@ -50,6 +54,8 @@
 			}
 			textarea {
 				padding-left: 2.45em;
+				// @include fluid-type($min_width, $max_width, $min_font, $max_font);
+		
 				font-size: 16px;
 				height: 125%;
 				width: 100%;
@@ -62,7 +68,7 @@
 		.boton_link {
 			width: 25%;
 			height: 100%;
-		}
+				}
 
 		.area_campo {
 			display: flex;
@@ -74,10 +80,14 @@
 
 		.campo_sexo {
 			height: 100%;
-			width: 35%;
+			width: 50%;
 			display: flex;
 			justify-content: space-around;
 			align-items: center;
+
+			label {
+				@include fluid-type($min_width, $max_width, $min_font, $max_font);
+			}
 			span {
 				font-size: 32px;
 				color: $GrisClaro;
@@ -96,16 +106,18 @@
 			align-items: center;
 			width: 100%;
 			input {
-				width: 20%;
+				@include fluid-type($min_width, $max_width, $min_font, $max_font);
+		
+	
+				width: 25%;
 			}
 		}
-		
-		.campo_con_links{
+
+		.campo_con_links {
 			margin-right: 8px;
 			display: flex;
 			justify-content: space-between;
 		}
-		
 	}
 	.campo_link {
 		input {
@@ -127,4 +139,10 @@
 
 .expand {
 	transform: translateY(0%);
+}
+@media screen and (max-width: 900px) {
+	.RegistroUsuario .camposRegistro {
+		height: 90%;
+		width: 90%;
+	}
 }
